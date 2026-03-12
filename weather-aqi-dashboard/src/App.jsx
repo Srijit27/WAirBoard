@@ -1,5 +1,6 @@
 import {useState} from "react";
 import SearchBar from "./components/Searchbar";
+import WeatherCard from "./components/WeatherCard";
 import {getCityCoordinates,getWeatherData} from "./services/WeatherAPI";
 
 function App(){
@@ -36,15 +37,7 @@ function App(){
       {loading && <p>Loading weather data...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
 
-      {weather && (
-        <div style={{ marginTop:"20px"}}>
-          <h2>{city}</h2>
-          <p>🌡Temperature:{weather.main.temp}°C</p>
-          <p>💧Humidity:{weather.main.humidity}%</p>
-          <p>🌬Wind Speed:{weather.wind.speed}m/s</p>
-          <p>☁Condition : {weather.weather[0].description}</p>
-        </div>
-      )}
+      {weather && <WeatherCard city={city} weather={weather}/>}
     </div>
   );
 }
