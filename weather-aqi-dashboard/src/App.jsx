@@ -36,7 +36,6 @@ function App(){
 
       {loading && <p>Loading weather data...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
-
       {weather && <WeatherCard city={city} weather={weather}/>}
     </div>
   );
