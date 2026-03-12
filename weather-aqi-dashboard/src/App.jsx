@@ -30,7 +30,7 @@ function App(){
   };
 
   return (
-    <div style={{ padding: "20px", maxWidth: "600px", margin: "0 auto" }}>
+    <div style={{padding:"20px", maxWidth:"600px", margin:"0 auto" }}>
       <h1>Weather & AQI Dashboard</h1>
       <SearchBar onSearch={handleSearch} />
 
