@@ -1,11 +1,13 @@
 import {useState} from "react";
 import SearchBar from "./components/Searchbar";
 import WeatherCard from "./components/WeatherCard";
+import AQICard from "./components/AQICard";
 import {getCityCoordinates,getWeatherData} from "./services/WeatherAPI";
 
 function App(){
   const [city,setCity]=useState("");
   const [weather,setWeather]=useState(null);
+  const [aqiData, setAqiData] = useState(null);
   const [loading,setLoading]=useState(false);
   const [error,setError]=useState("");
 
@@ -35,8 +37,9 @@ function App(){
       <SearchBar onSearch={handleSearch} />
 
       {loading && <p>Loading weather data...</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={{color:"red"}}>{error}</p>}
       {weather && <WeatherCard city={city} weather={weather}/>}
+      {aqiData && <AQICard aqiData={aqiData}/>}
     </div>
   );
 }
