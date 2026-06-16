@@ -29,11 +29,11 @@ export async function getWeatherData(lat,lon){
   return response.json();
 }
 
-export async function getAirQualityData(lat,lon) {
+export async function getAirQualityData(lat,lon){
   const response=await fetch(
     `${BASE_URL}/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`
   );
-  if (!response.ok) {
+  if (!response.ok){
     throw new Error("Failed to fetch air quality data");
   }
   return response.json();
