@@ -2,6 +2,8 @@ import {useState} from "react";
 import SearchBar from "./components/Searchbar";
 import WeatherCard from "./components/WeatherCard";
 import AQICard from "./components/AQICard";
+import Loader from "./components/Loader";
+import Error from "./components/Error";
 import {getCityCoordinates,getWeatherData,getAirQualityData} from "./services/WeatherAPI";
 
 function App(){
@@ -41,9 +43,8 @@ function App(){
     <div style={{padding:"20px", maxWidth:"600px", margin:"0 auto" }}>
       <h1>Weather & AQI Dashboard</h1>
       <SearchBar onSearch={handleSearch} />
-
-      {loading && <p>Loading weather data...</p>}
-      {error && <p style={{color:"red"}}>{error}</p>}
+      {loading && <Loader/>}
+      {error && <Error message={error}/>}
       {weather && <WeatherCard city={city} weather={weather}/>}
       {aqiData && <AQICard aqiData={aqiData}/>}
     </div>
