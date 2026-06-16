@@ -2,7 +2,7 @@ import {useState} from "react";
 import SearchBar from "./components/Searchbar";
 import WeatherCard from "./components/WeatherCard";
 import AQICard from "./components/AQICard";
-import {getCityCoordinates,getWeatherData} from "./services/WeatherAPI";
+import {getCityCoordinates,getWeatherData,getAirQualityData} from "./services/WeatherAPI";
 
 function App(){
   const [city,setCity]=useState("");
@@ -16,14 +16,20 @@ function App(){
       setLoading(true);
       setError("");
       setWeather(null);
+      setAqiData(null);
       const location=await getCityCoordinates(cityName);
       const weatherData=await getWeatherData(
+        location.lat,
+        location.lon
+      );
+      const airQualityData=await getAirQualityData(
         location.lat,
         location.lon
       );
 
       setCity(`${location.name}, ${location.country}`);
       setWeather(weatherData);
+      setAqiData(airQualityData);
     }catch(err){
       setError(err.message);
     } finally {
