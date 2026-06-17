@@ -1,10 +1,10 @@
 import {useState} from "react";
 import "./App.css";
-import SearchBar from "./components/Searchbar";
-import WeatherCard from "./components/WeatherCard";
-import AQICard from "./components/AQICard";
-import Loader from "./components/Loader";
-import Error from "./components/Error";
+import SearchBar from "./components/Searchbar/Searchbar";
+import WeatherCard from "./components/WeatherCard/WeatherCard";
+import AQICard from "./components/AQICard/AQICard";
+import Loader from "./components/Loader/Loader";
+import Error from "./components/Error/Error";
 import {getCityCoordinates,getWeatherData,getAirQualityData} from "./services/WeatherAPI";
 
 function App(){
