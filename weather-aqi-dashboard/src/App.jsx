@@ -1,4 +1,5 @@
 import {useState} from "react";
+import "./App.css";
 import SearchBar from "./components/Searchbar";
 import WeatherCard from "./components/WeatherCard";
 import AQICard from "./components/AQICard";
@@ -40,8 +41,8 @@ function App(){
   };
 
   return (
-    <div style={{padding:"20px", maxWidth:"600px", margin:"0 auto" }}>
-      <h1>Weather & AQI Dashboard</h1>
+    <div className="app-container">
+      <h1 className="app-title">Weather & AQI Dashboard</h1>
       <SearchBar onSearch={handleSearch} />
       {loading && <Loader/>}
       {error && <Error message={error}/>}
