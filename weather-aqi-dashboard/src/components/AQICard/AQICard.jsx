@@ -1,3 +1,5 @@
+import "./AQICard.css";
+
 function AQICard({aqiData}) 
 {
     if (!aqiData||!aqiData.list) return null;
@@ -23,12 +25,14 @@ function AQICard({aqiData})
   const {label,color}=getAQILevel(aqi);
 
   return(
-    <div style={{...styles.card,borderLeft:`8px solid ${color}`}}>
-      <h2>Air Quality Index</h2>
-      <p style={{fontSize:"20px",fontWeight:"bold",color}}>
-        AQI:{aqi}({label})
+    <div className="aqi-card">
+      <h2 className="aqi-title">Air Quality Index</h2>
+      <p className="aqi-status">
+        <span className="aqi-badge" style={{ backgroundColor: color }}>
+          AQI {aqi} • {label}
+        </span>
       </p>
-      <div style={styles.grid}>
+      <div className="aqi-grid">
         <p>PM2.5:{components.pm2_5}</p>
         <p>PM10:{components.pm10}</p>
         <p>CO:{components.co}</p>
@@ -38,21 +42,5 @@ function AQICard({aqiData})
     </div>
   );
 }
-
-const styles = {
-  card: {
-    marginTop:"20px",
-    padding:"20px",
-    borderRadius:"10px",
-    backgroundColor:"#ffffff",
-    boxShadow:"0px 4px 12px rgba(0,0,0,0.1)",
-  },
-  grid: {
-    marginTop: "10px",
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "10px",
-  },
-};
 
 export default AQICard;

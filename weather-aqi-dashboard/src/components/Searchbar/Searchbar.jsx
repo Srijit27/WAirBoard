@@ -4,8 +4,7 @@ import "./Searchbar.css";
 function SearchBar({onSearch}){
   const[city,setCity]=useState("");
 
-  const handleSubmit=(e)=>
-  {
+  const handleSubmit=(e)=>{
     e.preventDefault();
     if(!city.trim()) return;
     onSearch(city.trim());

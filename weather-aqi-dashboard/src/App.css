@@ -1,21 +1,44 @@
+*{
+  box-sizing: border-box;
+}
+
 body{
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f4f6f8;
+  background: linear-gradient(to bottom, #4facfe, #00f2fe);
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 #root{
+  width: 100%;
   min-height: 100vh;
 }
 
 .app-container{
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 20px;
   margin-top: 50px;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .app-title{
   text-align: center;
   margin-bottom: 30px;
+}
+
+.dashboard-grid{
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+@media (max-width:768px){
+  .dashboard-grid{
+    grid-template-columns: 1fr;
+  }
 }

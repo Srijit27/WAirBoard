@@ -25,6 +25,7 @@ function App(){
         location.lat,
         location.lon
       );
+      console.log(weatherData);
       const airQualityData=await getAirQualityData(
         location.lat,
         location.lon
@@ -46,8 +47,12 @@ function App(){
       <SearchBar onSearch={handleSearch} />
       {loading && <Loader/>}
       {error && <Error message={error}/>}
-      {weather && <WeatherCard city={city} weather={weather}/>}
-      {aqiData && <AQICard aqiData={aqiData}/>}
+      {weather && aqiData && (
+        <div className="dashboard-grid">
+          <WeatherCard city={city} weather={weather} />
+          <AQICard aqiData={aqiData} />
+        </div>
+      )}
     </div>
   );
 }
