@@ -1,6 +1,7 @@
 # 🌤️ WAirBoard - Weather & Air Quality Dashboard
 
 WAirBoard is a responsive Weather & Air Quality Dashboard built using **React.js** and **Vite** that provides real-time weather information and air quality insights for cities across the globe. The application integrates multiple OpenWeather APIs to fetch and display live environmental data in a modern, user-friendly dashboard.
+
 ---
 
 # 📌 Features
