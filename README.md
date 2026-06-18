@@ -1,7 +1,6 @@
 # 🌤️ WAirBoard - Weather & Air Quality Dashboard
 
 WAirBoard is a responsive Weather & Air Quality Dashboard built using **React.js** and **Vite** that provides real-time weather information and air quality insights for cities across the globe. The application integrates multiple OpenWeather APIs to fetch and display live environmental data in a modern, user-friendly dashboard.
-
 ---
 
 # 📌 Features
@@ -98,31 +97,16 @@ graph TD
 
 ## 🏗️ Detailed Workflow
 
-**Step 1** -> The user enters a city name into the SearchBar component.
-
-**Step 2** -> The city name is converted into geographical coordinates (latitude and longitude).
-
-**Step 3** -> Using the coordinates, the OpenWeather Weather API fetches:
-* Temperature
-* Humidity
-* Wind Speed
-* Pressure
-* Visibility
-* Sunrise Time
-* Sunset Time
-* Weather Condition
-
-**Step 4** -> Using the same coordinates, the Air Pollution API fetches:
-* AQI & PM2.5
-* PM10 & CO
-* NO₂ & O₃
-
-**Step 5** -> Fetched API data is stored in React state variables.
-
-**Step 6** -> WeatherCard and AQICard components are rendered only when valid data is available.
-
-**Step 7** -> React automatically updates the user interface with the latest weather and air quality information.
-
+* **Step 1** -> The user enters a city name into the SearchBar component.
+* **Step 2** -> The city name is converted into geographical coordinates (latitude and longitude).
+* **Step 3** -> Using the coordinates, the OpenWeather Weather API fetches: Temperature, Humidity, Wind Speed, Pressure, Visibility, Sunrise Time, Sunset Time, Weather Condition
+* **Step 4** -> Using the same coordinates, the Air Pollution API fetches:
+   * AQI & PM2.5
+   * PM10 & CO
+   * NO₂ & O₃
+* **Step 5** -> Fetched API data is stored in React state variables.
+* **Step 6** -> WeatherCard and AQICard components are rendered only when valid data is available.
+* **Step 7** -> React automatically updates the user interface with the latest weather and air quality information.
 ---
 
 ## 🛠️ Tech Stack
@@ -130,7 +114,6 @@ graph TD
 * **Frontend** -> React.js, Vite, JavaScript (ES6+), HTML5, CSS3
 * **APIs** -> OpenWeather Geocoding API, OpenWeather Current Weather API, OpenWeather Air Pollution API
 * **Development Tools** -> Visual Studio Code, Git, GitHub, npm
-
 ---
 
 # 📂 Folder Structure
@@ -228,16 +211,16 @@ http://localhost:5173
 
 # 🔮 Future Enhancements
 
-- 🌦️ 5-Day Weather Forecast
-- 🌙 Dark Mode Support
-- 📍 Geolocation-Based Weather Detection
-- ⭐ Favorite Cities
-- 📈 Weather Analytics Charts
-- 🕒 Hourly Forecast
-- 🚨 Weather Alerts
-- 📱 Progressive Web App (PWA) Support
-- 🔍 Search History
-- 🌎 Multi-Language Support
+* 🌦️ 5-Day Weather Forecast
+* 🌙 Dark Mode Support
+* 📍 Geolocation-Based Weather Detection
+* ⭐ Favorite Cities
+* 📈 Weather Analytics Charts
+* 🕒 Hourly Forecast
+* 🚨 Weather Alerts
+* 📱 Progressive Web App (PWA) Support
+* 🔍 Search History
+* 🌎 Multi-Language Support
 
 ---
 
